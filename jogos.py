@@ -1,20 +1,21 @@
 import forca
-import guess_game
+import adivinhacao
 
-for i in range(1,21):
-    print("*",end = "")
+def escolhe_jogo():
+    print("*********************************")
+    print("*******Escolha o seu jogo!*******")
+    print("*********************************")
 
-print("\n*Escolha o seu jogo*")
+    print("(1) Forca (2) Adivinhação")
 
-for i in range(1,21):
-    print("*",end = "")
+    jogo = int(input("Qual jogo? "))
 
-print("\n1) Forca\n2) Adivinhacao")
-jogo = int(input("Digite o jogo: "))
+    if(jogo == 1):
+        print("Jogando forca")
+        forca.jogar()
+    elif(jogo == 2):
+        print("Jogando adivinhação")
+        adivinhacao.jogar()
 
-if(jogo == 1):
-    print("Jogando Forca")
-    forca.jogo_forca()
-elif(jogo == 2):
-    print("Jogando Adivinhacao")
-    guess_game.jogar_adivinhacao()
+if(__name__ == "__main__"):
+    escolhe_jogo()
